@@ -10,6 +10,8 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import pl.programming.tracker_data.local.TrackerDatabase
 import pl.programming.tracker_data.remote.OpenFoodApi
+import pl.programming.tracker_data.repository.TrackerRepositoryImpl
+import pl.programming.tracker_domain.repository.TrackerRepository
 import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.create
@@ -49,5 +51,17 @@ object TrackerDataModule {
             TrackerDatabase::class.java,
             "tracker_db",
         ).build()
+    }
+
+    @Provides
+    @Singleton
+    fun provideTrackerRepository(
+        api: OpenFoodApi,
+        db: TrackerDatabase
+    ): TrackerRepository {
+        return TrackerRepositoryImpl(
+            dao = db.dao,
+            api = api
+        )
     }
 }
