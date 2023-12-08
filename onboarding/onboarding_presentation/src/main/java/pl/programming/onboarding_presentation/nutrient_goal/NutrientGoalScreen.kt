@@ -1,4 +1,4 @@
-package pl.programming.onboarding_presentation.weight
+package pl.programming.onboarding_presentation.nutrient_goal
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -24,10 +24,10 @@ import pl.programming.onboarding_presentation.components.ActionButton
 import pl.programming.onboarding_presentation.components.UnitTextField
 
 @Composable
-fun WeightScreen(
+fun NutrientGoalScreen(
     scaffoldState: ScaffoldState,
     onNavigate: (UiEvent.Navigate) -> Unit,
-    viewModel: WeightViewModel = hiltViewModel(),
+    viewModel: NutrientGoalViewModel = hiltViewModel(),
 ) {
     val spacing = LocalSpacing.current
     val context = LocalContext.current
@@ -41,6 +41,7 @@ fun WeightScreen(
                         message = event.message.asString(context),
                     )
                 }
+
                 else -> Unit
             }
         }
@@ -57,22 +58,46 @@ fun WeightScreen(
             horizontalAlignment = Alignment.CenterHorizontally,
         ) {
             Text(
-                text = stringResource(R.string.whats_your_weight),
+                text = stringResource(R.string.what_are_your_nutrient_goals),
                 style = MaterialTheme.typography.h3,
             )
 
             Spacer(modifier = Modifier.height(spacing.spaceMedium))
 
             UnitTextField(
-                value = viewModel.weight,
-                onValueChange = viewModel::onWeightEnter,
-                unit = stringResource(R.string.kg   ),
+                value = viewModel.state.carbsRation,
+                onValueChange = {
+                    viewModel.onEvent(NutrientGoalEvent.OnCarbRatioEnter(it))
+                },
+                unit = stringResource(R.string.percent_carbs),
+            )
+
+            Spacer(modifier = Modifier.height(spacing.spaceMedium))
+
+            UnitTextField(
+                value = viewModel.state.proteinRatio,
+                onValueChange = {
+                    viewModel.onEvent(NutrientGoalEvent.OnProteinRatioEnter(it))
+                },
+                unit = stringResource(R.string.percent_proteins),
+            )
+
+            Spacer(modifier = Modifier.height(spacing.spaceMedium))
+
+            UnitTextField(
+                value = viewModel.state.fatRatio,
+                onValueChange = {
+                    viewModel.onEvent(NutrientGoalEvent.OnFatRatioEnter(it))
+                },
+                unit = stringResource(R.string.percent_fats),
             )
         }
 
         ActionButton(
             text = stringResource(R.string.next),
-            onClick = viewModel::onNextClick,
+            onClick = {
+                viewModel.onEvent(NutrientGoalEvent.OnNextClick)
+            },
             modifier = Modifier.align(Alignment.BottomEnd),
         )
     }
