@@ -7,7 +7,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import pl.programming.core.domain.DefaultPreferences
+import pl.programming.core.data.preferences.DefaultPreferences
 import pl.programming.core.domain.preferences.Preferences
 import pl.programming.core.domain.usecase.FilterOutDigits
 import javax.inject.Singleton
