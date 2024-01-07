@@ -20,11 +20,9 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.hilt.navigation.compose.hiltViewModel
 import pl.programming.core.R
-import pl.programming.core.domain.model.ActivityLevel
-import pl.programming.core.domain.model.Gender
 import pl.programming.core.domain.model.GoalType
 import pl.programming.core.utils.UiEvent
-import pl.programming.core_ui.LocalSpacing
+import pl.programming.coreui.LocalSpacing
 import pl.programming.onboarding_presentation.components.ActionButton
 import pl.programming.onboarding_presentation.components.SelectableButton
 

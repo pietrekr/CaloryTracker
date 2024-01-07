@@ -16,7 +16,7 @@ import androidx.compose.ui.text.style.TextAlign
 import pl.programming.core.R
 import pl.programming.core.navigation.Route
 import pl.programming.core.utils.UiEvent
-import pl.programming.core_ui.LocalSpacing
+import pl.programming.coreui.LocalSpacing
 import pl.programming.onboarding_presentation.components.ActionButton
 
 @Composable

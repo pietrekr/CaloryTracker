@@ -15,7 +15,7 @@ import androidx.compose.ui.layout.LastBaseline
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.sp
-import pl.programming.core_ui.LocalSpacing
+import pl.programming.coreui.LocalSpacing
 
 @Composable
 fun UnitTextField(
