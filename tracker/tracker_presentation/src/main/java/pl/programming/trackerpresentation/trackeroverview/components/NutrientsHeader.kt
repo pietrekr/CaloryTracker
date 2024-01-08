@@ -102,21 +102,21 @@ fun NutrientsHeader(
                 goal = state.carbsGoal,
                 name = stringResource(R.string.carbs),
                 color = CarbColor,
-                modifier = Modifier.size(90.dp)
+                modifier = Modifier.size(90.dp),
             )
             NutrientBarInfo(
                 value = state.totalProtein,
                 goal = state.proteinGoal,
                 name = stringResource(R.string.protein),
                 color = ProteinColor,
-                modifier = Modifier.size(90.dp)
+                modifier = Modifier.size(90.dp),
             )
             NutrientBarInfo(
                 value = state.totalFat,
                 goal = state.fatGoal,
                 name = stringResource(R.string.fat),
                 color = FatColor,
-                modifier = Modifier.size(90.dp)
+                modifier = Modifier.size(90.dp),
             )
         }
     }

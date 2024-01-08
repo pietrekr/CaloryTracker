@@ -88,7 +88,7 @@ fun NutrientsBar(
             drawRoundRect(
                 color = caloriesExceededColor,
                 size = size,
-                cornerRadius = CornerRadius(100f)
+                cornerRadius = CornerRadius(100f),
             )
         }
     }
