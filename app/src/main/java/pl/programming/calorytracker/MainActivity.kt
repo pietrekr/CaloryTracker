@@ -23,6 +23,7 @@ import pl.programming.onboarding_presentation.height.HeightScreen
 import pl.programming.onboarding_presentation.nutrient_goal.NutrientGoalScreen
 import pl.programming.onboarding_presentation.weight.WeightScreen
 import pl.programming.onboarding_presentation.welcome.WelcomeScreen
+import pl.programming.trackerpresentation.trackeroverview.TrackerOverviewScreen
 
 @AndroidEntryPoint
 class MainActivity : ComponentActivity() {
@@ -82,6 +83,9 @@ class MainActivity : ComponentActivity() {
                             )
                         }
                         composable(Route.TRACKER_OVERVIEW) {
+                            TrackerOverviewScreen(
+                                onNavigate = navController::navigate,
+                            )
                         }
                         composable(Route.SEARCH) {
                         }
