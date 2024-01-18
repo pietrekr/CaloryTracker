@@ -10,9 +10,7 @@ import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
 import pl.programming.core.domain.model.ActivityLevel
-import pl.programming.core.domain.model.Gender
 import pl.programming.core.domain.preferences.Preferences
-import pl.programming.core.navigation.Route
 import pl.programming.core.utils.UiEvent
 import javax.inject.Inject
 
@@ -32,7 +30,7 @@ class ActivityViewModel @Inject constructor(
     fun onNextClicked() {
         viewModelScope.launch {
             preferences.saveActivityLevel(selectedActivityLevel)
-            _uiEvent.send(UiEvent.Navigate(Route.GOAL))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 }

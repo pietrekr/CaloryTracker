@@ -9,10 +9,8 @@ import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.flow.receiveAsFlow
 import kotlinx.coroutines.launch
-import pl.programming.core.domain.model.ActivityLevel
 import pl.programming.core.domain.model.GoalType
 import pl.programming.core.domain.preferences.Preferences
-import pl.programming.core.navigation.Route
 import pl.programming.core.utils.UiEvent
 import javax.inject.Inject
 
@@ -32,7 +30,7 @@ class GoalViewModel @Inject constructor(
     fun onNextClicked() {
         viewModelScope.launch {
             preferences.saveGoalType(selectedGoal)
-            _uiEvent.send(UiEvent.Navigate(Route.NUTRIENT_GOAL))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 }

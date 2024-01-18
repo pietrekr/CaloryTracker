@@ -12,7 +12,6 @@ import kotlinx.coroutines.launch
 import pl.programming.core.R
 import pl.programming.core.domain.preferences.Preferences
 import pl.programming.core.domain.usecase.FilterOutDigits
-import pl.programming.core.navigation.Route
 import pl.programming.core.utils.UiEvent
 import pl.programming.core.utils.UiText
 import javax.inject.Inject
@@ -45,7 +44,7 @@ class AgeViewModel @Inject constructor(
                 return@launch
             }
             preferences.saveAge(ageNumber)
-            _uiEvent.send(UiEvent.Navigate(Route.HEIGHT))
+            _uiEvent.send(UiEvent.Success)
         }
     }
 }

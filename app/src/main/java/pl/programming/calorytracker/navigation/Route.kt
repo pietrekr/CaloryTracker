@@ -1,4 +1,4 @@
-package pl.programming.core.navigation
+package pl.programming.calorytracker.navigation
 
 object Route {
     const val WELCOME = "welcome"
